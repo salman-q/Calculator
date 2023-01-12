@@ -58,10 +58,10 @@ class CalcViewModel: ViewModel() {
             }
             return
         }
-        if (!state.number2.contains(".")) {
+        if (state.operation != null && !state.number2.contains(".")) {
             state = when (state.number2) {
-                "" -> state.copy(number2 = state.number1 + "0.")
-                else -> state.copy(number2 = state.number1 + ".")
+                "" -> state.copy(number2 = state.number2 + "0.")
+                else -> state.copy(number2 = state.number2 + ".")
             }
         }
     }
